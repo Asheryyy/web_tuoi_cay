@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hệ Thống Tưới Cây Thông Minh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #f4f7f4; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem; }
+    .wrapper { max-width: 600px; width: 100%; }
+    .hero {
+      background: linear-gradient(160deg, #1a3a2a 0%, #2d5a3d 50%, #1e4a30 100%);
+      border-radius: 20px;
+      padding: 3rem 2.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(80,180,100,0.12);
+    }
+    .leaf { position: absolute; right: 2rem; top: 2rem; font-size: 80px; opacity: 0.15; pointer-events: none; }
+    .badge {
+      display: inline-block;
+      background: rgba(120,220,140,0.18);
+      color: #7deba0;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(120,220,140,0.25);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #f0f7f2;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    h1 span { color: #6ddf8f; }
+    .sub {
+      font-size: 15px;
+      color: rgba(200,235,210,0.75);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #6ddf8f;
+      color: #0f2018;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: #85e8a2; transform: scale(1.02); }
+    .btn svg { width: 18px; height: 18px; }
+    .apk-note { display: block; margin-top: 12px; font-size: 12px; color: rgba(180,220,195,0.5); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 1.25rem;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e4ede6;
+      border-radius: 14px;
+      padding: 1.25rem 1rem;
+    }
+    .feature-icon { font-size: 22px; margin-bottom: 10px; display: block; }
+    .feature-title { font-size: 14px; font-weight: 500; color: #1a3a2a; margin-bottom: 4px; }
+    .feature-desc { font-size: 12px; color: #6b8a72; line-height: 1.5; }
+    .steps-wrap {
+      background: #fff;
+      border: 1px solid #e4ede6;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .steps-title { font-size: 11px; font-weight: 500; color: #6b8a72; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 1rem; }
+    .step { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      min-width: 24px; height: 24px;
+      border-radius: 50%;
+      background: #e1f5e8;
+      color: #2d5a3d;
+      font-size: 11px;
+      font-weight: 500;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-text { font-size: 13px; color: #2c3e2f; line-height: 1.6; padding-top: 3px; }
+    .footer { text-align: center; font-size: 12px; color: #8fa896; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="hero">
+      <div class="leaf">🌿</div>
+      <div class="badge">Android App</div>
+      <h1>Tưới cây <span>thông minh</span><br>mọi lúc mọi nơi</h1>
+      <p class="sub">Quản lý lịch tưới, theo dõi độ ẩm và chăm sóc cây xanh của bạn chỉ với vài thao tác đơn giản.</p>
+      <a class="btn" href="https://storagtuoicay.blob.core.windows.net/downloads/app-debug.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Tải về (.apk)
+      </a>
+      <span class="apk-note">Yêu cầu Android 8.0 trở lên · Miễn phí hoàn toàn</span>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <span class="feature-icon">💧</span>
+        <div class="feature-title">Lịch tưới tự động</div>
+        <div class="feature-desc">Đặt lịch tưới cho từng loại cây theo ngày và giờ.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌡️</span>
+        <div class="feature-title">Theo dõi độ ẩm</div>
+        <div class="feature-desc">Cảnh báo khi đất khô, nhắc nhở kịp thời.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌱</span>
+        <div class="feature-title">Quản lý nhiều cây</div>
+        <div class="feature-desc">Thêm và phân loại nhiều loại cây khác nhau.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <div class="feature-title">Thống kê chăm sóc</div>
+        <div class="feature-desc">Xem lịch sử tưới và tình trạng cây theo tuần.</div>
+      </div>
+    </div>
+
+    <div class="steps-wrap">
+      <div class="steps-title">Hướng dẫn cài đặt</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Nhấn <strong>Tải về (.apk)</strong> để tải file cài đặt về máy.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Vào <strong>Cài đặt → Bảo mật</strong> → bật "Cho phép cài từ nguồn không xác định".</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Mở file .apk vừa tải và nhấn <strong>Cài đặt</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Mở app và bắt đầu chăm sóc cây xanh của bạn!</div>
+      </div>
+    </div>
+
+    <div class="footer">Không quảng cáo · Dữ liệu lưu trên thiết bị của bạn</div>
+  </div>
+</body>
+</html>
